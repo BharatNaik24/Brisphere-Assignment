@@ -7,12 +7,12 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-white  p-3">
       <Container fluid>
-        <Navbar.Brand href="#home">Brisphere</Navbar.Brand>
+        <Navbar.Brand href="/">Brisphere</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#features">Discover</Nav.Link>
-            <Nav.Link href="#pricing">Services</Nav.Link>{" "}
+            <Nav.Link href="#discover">Discover</Nav.Link>
+            <Nav.Link href="#services">Services</Nav.Link>{" "}
             <Nav.Link href="#pricing">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>

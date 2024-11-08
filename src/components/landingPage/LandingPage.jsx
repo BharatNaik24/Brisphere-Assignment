@@ -1,23 +1,36 @@
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  decrementRoomsCount,
   incrementRoomsCount,
+  decrementRoomsCount,
 } from "../../redux/roomSlice";
+import { FaFacebook } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 import { FaCirclePlus } from "react-icons/fa6";
+import { setBookingDetails } from "../../redux/roomSlice"; // Import the setBookingDetails action
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function LandingPage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize useNavigate
   const roomCount = useSelector((state) => state.room.roomsCount);
+  const [checkIn, setCheckIn] = useState(""); // State for check-in date
+  const [checkOut, setCheckOut] = useState(""); // State for check-out date
+
+  // Handle booking button click
+  const handleBook = () => {
+    // Dispatch booking details to the Redux store
+    dispatch(setBookingDetails({ checkIn, checkOut, roomsCount: roomCount }));
+
+    // Redirect to the "Bookings" page (or the relevant page)
+    navigate("/bookmyhotel"); // Replace "/bookmyhotel" with your actual destination
+  };
 
   return (
     <div className="container relative mx-auto my-8 p-2">
       <div
-        style={{
-          backgroundColor: "#ececec",
-        }}
+        style={{ backgroundColor: "#ececec" }}
         className="rounded-lg flex flex-col md:flex-row items-center min-h-[500px] relative"
       >
         {/* Text and Social Icons Section */}
@@ -43,18 +56,28 @@ function LandingPage() {
       </div>
 
       {/* Check-In Container */}
-      <div className="absolute bg-white -bottom-5 left-1/2 transform -translate-x-1/2 flex justify-center flex-col md:flex-row gap-10 p-6 rounded-lg shadow-lg w-5/6 max-w-4xl text-center">
+      <div className="absolute bg-white -bottom-10 left-1/2 transform -translate-x-1/2 flex justify-center flex-col md:flex-row gap-10 p-6 rounded-lg shadow-lg w-5/6 max-w-4xl text-center">
         <div className="grid grid-cols-2 gap-5 md:grid-cols-4 lg:grid-cols-4 text-center">
           {/* CHECK-IN Field */}
           <div className="flex flex-col items-center">
             <h6 className="font-semibold mb-1">CHECK-IN</h6>
-            <input type="date" className="border rounded-md p-2 w-full" />
+            <input
+              type="date"
+              className="border rounded-md p-2 w-full"
+              value={checkIn}
+              onChange={(e) => setCheckIn(e.target.value)} // Update checkIn state
+            />
           </div>
 
           {/* CHECK-OUT Field */}
           <div className="flex flex-col items-center">
             <h6 className="font-semibold mb-1">CHECK-OUT</h6>
-            <input type="date" className="border rounded-md p-2 w-full" />
+            <input
+              type="date"
+              className="border rounded-md p-2 w-full"
+              value={checkOut}
+              onChange={(e) => setCheckOut(e.target.value)} // Update checkOut state
+            />
           </div>
 
           {/* ROOMS Field */}
@@ -85,13 +108,13 @@ function LandingPage() {
           {/* BOOK Button */}
           <div className="flex flex-col items-center mt-1">
             <button
+              onClick={handleBook} // Handle book button click
               className="bg-blue-700 text-white py-3 px-8 rounded-lg"
               style={{
                 backgroundColor: "#206d99",
                 color: "#fff",
                 padding: "20px 50px",
                 borderRadius: "8px",
-                marginRight: "30%",
               }}
             >
               BOOK
