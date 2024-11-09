@@ -41,7 +41,7 @@ function BooksPage() {
             />
           </div>
 
-          <div className="flex m-0 pt-0 justify-between w-full gap-5 text-start md:text-left p-6">
+          <div className="flex flex-col md:flex-row m-0 pt-0 justify-between w-full gap-5 text-start md:text-left p-6">
             <div className="w-100">
               <input
                 type="text"
@@ -51,7 +51,7 @@ function BooksPage() {
                 className="form-control p-2 w-100 border rounded"
               />
             </div>
-            <div className="flex gap-5 flex-col w-100 md:flex-row">
+            <div className="flex gap-5  w-100 md:flex-row">
               <p className="w-3/6 mt-0 text-center border rounded bg-white p-2">
                 {roomsCount} Adult
               </p>
