@@ -21,7 +21,7 @@ function BooksPage() {
       <div className="container relative mx-auto my-8 p-5">
         <div
           style={{ backgroundColor: "#ececec" }}
-          className="rounded-lg flex-col md:flex-row items-center min-h-[300px] relative"
+          className="rounded-lg flex-col md:flex-row items-center min-h-[400px] relative"
         >
           {/* User Input Fields */}
           <div className="flex w-full gap-5 text-start md:text-left p-6">
@@ -41,7 +41,7 @@ function BooksPage() {
             />
           </div>
 
-          <div className="flex w-full gap-5 text-start md:text-left p-6">
+          <div className="flex w-full sm:flex-col gap-5 text-start md:text-left p-6">
             <input
               type="text"
               placeholder="+91 - Number"
@@ -49,12 +49,14 @@ function BooksPage() {
               onChange={(e) => setPhone(e.target.value)}
               className="form-control w-full h-25 p-2 border rounded"
             />
-            <p className="w-3/6 mt-0 text-center border rounded bg-white p-2">
-              {roomsCount} Adult
-            </p>
-            <p className="w-3/6 mt-0 text-center border rounded bg-white p-2">
-              {roomsCount * 2} Children
-            </p>
+            <div className="flex">
+              <p className="w-3/6 mt-0 text-center border rounded bg-white p-2">
+                {roomsCount} Adult
+              </p>
+              <p className="w-3/6 mt-0 text-center border rounded bg-white p-2">
+                {roomsCount * 2} Children
+              </p>
+            </div>
           </div>
         </div>
 

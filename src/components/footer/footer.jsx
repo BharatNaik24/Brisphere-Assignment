@@ -72,8 +72,8 @@ function Footer() {
           </div>
         </div>
         <div className="mt-1 text-center">
-          <p className="text-sm">© 2024 Brisphere. All Rights Reserved.</p>
-          <p className="-m-5 p-0">
+          <p className="text-sm m-0">© 2024 Brisphere. All Rights Reserved.</p>
+          <span className="-m-5 p-0">
             Developed by
             <a
               href="https://www.instagram.com/nameisbharatnaik/"
@@ -81,7 +81,7 @@ function Footer() {
             >
               Bharat Naik
             </a>
-          </p>
+          </span>
         </div>
       </div>
     </div>
