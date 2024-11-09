@@ -6,6 +6,7 @@ import Layout from "./components/layout/layout";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import BooksPage from "./pages/bookingsPage/bookingsPage";
+import PaymentsConfirmed from "./pages/confirmationpage/confirmationpage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route path="/bookmyhotel" element={<BooksPage />} />
+          <Route path="/payments-confirmed" element={<PaymentsConfirmed />} />
         </Routes>
         <Footer />
       </Router>

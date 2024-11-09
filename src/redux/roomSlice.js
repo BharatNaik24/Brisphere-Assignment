@@ -20,16 +20,27 @@ const roomSlice = createSlice({
 });
 
 // Booking slice (for managing the booking details like check-in, check-out, and rooms count)
+
+const initialState = {
+  name: "",
+  email: "",
+  phone: "",
+  checkIn: "",
+  checkOut: "",
+  roomsCount: 0,
+};
+
 const bookingSlice = createSlice({
   name: "booking",
-  initialState: {
-    checkIn: "",
-    checkOut: "",
-    roomsCount: 0,
-  },
+  initialState,
   reducers: {
     setBookingDetails: (state, action) => {
-      const { checkIn, checkOut, roomsCount } = action.payload;
+      // Populate the booking details state with the payload
+      const { name, email, phone, checkIn, checkOut, roomsCount } =
+        action.payload;
+      state.name = name;
+      state.email = email;
+      state.phone = phone;
       state.checkIn = checkIn;
       state.checkOut = checkOut;
       state.roomsCount = roomsCount;
