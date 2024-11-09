@@ -47,7 +47,7 @@ function ConfirmationPage() {
               className="h-40"
             />
             <div>
-              <h6 className="mb-0">Order Completed</h6>
+              <h4 className="mb-0 font-bold pr-3">Order Completed</h4>
               <p className="mb-0">Have Questions ?</p>
               <a
                 href=""
