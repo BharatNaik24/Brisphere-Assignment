@@ -14,9 +14,13 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Layout />} />
-          <Route path="/bookmyhotel" element={<BooksPage />} />
-          <Route path="/payments-confirmed" element={<PaymentsConfirmed />} />
+          <Route exact path="/" element={<Layout />} />
+          <Route exact path="/bookmyhotel" element={<BooksPage />} />
+          <Route
+            exact
+            path="/payments-confirmed"
+            element={<PaymentsConfirmed />}
+          />
         </Routes>
         <Footer />
       </Router>

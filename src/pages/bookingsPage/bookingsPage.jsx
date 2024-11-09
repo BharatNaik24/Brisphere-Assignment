@@ -85,15 +85,22 @@ function BooksPage() {
 
   const handleCliking = () => {
     if (validateForm()) {
+      // Prepare the booking details
+      const bookingDetails = {
+        name,
+        email,
+        phone,
+        checkIn: localCheckIn,
+        checkOut: localCheckOut,
+        roomsCount,
+      };
+
+      // Dispatch the action to update Redux state
+      dispatch(setBookingDetails(bookingDetails));
+
+      // Navigate to the confirmation page with booking details in the state
       navigate("/payments-confirmed", {
-        state: {
-          name,
-          email,
-          phone,
-          checkIn: localCheckIn,
-          checkOut: localCheckOut,
-          roomsCount,
-        },
+        state: bookingDetails,
       });
     } else {
       setFormError(true);
@@ -251,7 +258,9 @@ function BooksPage() {
                 onClick={handleCliking}
               >
                 <FaIndianRupeeSign />
-                <span className="font-bold">{12430 * roomsCount}</span>
+                <span className="font-bold">
+                  {roomsCount ? 12430 * roomsCount : "Pay Now"}
+                </span>
               </button>
               <p>Click to pay token amount</p>
             </div>

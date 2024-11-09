@@ -1,5 +1,4 @@
-// src/redux/roomSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, combineReducers } from "@reduxjs/toolkit";
 
 // Room slice (for managing the number of rooms selected)
 const roomSlice = createSlice({
@@ -20,8 +19,7 @@ const roomSlice = createSlice({
 });
 
 // Booking slice (for managing the booking details like check-in, check-out, and rooms count)
-
-const initialState = {
+const initialBookingState = {
   name: "",
   email: "",
   phone: "",
@@ -32,7 +30,7 @@ const initialState = {
 
 const bookingSlice = createSlice({
   name: "booking",
-  initialState,
+  initialState: initialBookingState,
   reducers: {
     setBookingDetails: (state, action) => {
       // Populate the booking details state with the payload
@@ -48,12 +46,15 @@ const bookingSlice = createSlice({
   },
 });
 
+// Combine reducers
+const rootReducer = combineReducers({
+  room: roomSlice.reducer,
+  booking: bookingSlice.reducer,
+});
+
 // Export actions for both slices
 export const { incrementRoomsCount, decrementRoomsCount } = roomSlice.actions;
 export const { setBookingDetails } = bookingSlice.actions;
 
-// Export reducers for both slices
-export default {
-  room: roomSlice.reducer,
-  booking: bookingSlice.reducer,
-};
+// Export the combined reducer
+export default rootReducer;

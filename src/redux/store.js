@@ -1,11 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import roomReducer from "./roomSlice"; // Import roomSlice directly
+import rootReducer from "./roomSlice"; // Import the combined reducer
 
 const store = configureStore({
-  reducer: {
-    room: roomReducer.room, // Room reducer
-    booking: roomReducer.booking, // Booking reducer, referencing the 'booking' slice from roomSlice.js
-  },
+  reducer: rootReducer, // Use the combined reducer
 });
 
 export default store;

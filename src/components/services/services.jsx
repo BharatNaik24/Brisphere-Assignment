@@ -71,7 +71,7 @@ function Services() {
   return (
     <div id="services">
       <div className="container mt-5  mx-auto px-6 mb-5">
-        <h1 className="text-center font-normal text-5xl mb-6">SERVICES</h1>
+        <h1 className="text-center font-normal text-5xl mb-6">Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {serviesList.map((item) => (
             <div
