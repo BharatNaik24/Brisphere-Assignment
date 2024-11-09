@@ -21,9 +21,10 @@ function BooksPage() {
       <div className="container relative mx-auto my-8 p-5">
         <div
           style={{ backgroundColor: "#ececec" }}
-          className="rounded-lg md:flex-row items-center min-h-[300px] relative"
+          className="rounded-lg flex-col md:flex-row items-center min-h-[300px] relative"
         >
-          <div className="flex w-100 gap-5 text-start md:text-left p-6">
+          {/* User Input Fields */}
+          <div className="flex w-full gap-5 text-start md:text-left p-6">
             <input
               type="text"
               placeholder="Name"
@@ -39,7 +40,8 @@ function BooksPage() {
               className="form-control w-full p-2 border rounded"
             />
           </div>
-          <div className="flex w-100 gap-5 text-start md:text-left p-6 ">
+
+          <div className="flex w-full gap-5 text-start md:text-left p-6">
             <input
               type="text"
               placeholder="+91 - Number"
@@ -56,9 +58,10 @@ function BooksPage() {
           </div>
         </div>
 
-        <div className="absolute bg-white -bottom-20 left-1/2 transform -translate-x-1/2 flex justify-center flex-col md:flex-row gap-10 p-6 rounded-lg shadow-lg w-3/4 max-w-4xl text-center">
+        {/* Responsive Positioned Container */}
+        <div className="bg-white p-8 rounded-lg shadow-lg text-center mt-10 md:mt-8 md:relative md:left-20 md:w-3/4 md:translate-x-0 md:-translate-y-40 lg:absolute lg:-bottom-10 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:flex lg:justify-center lg:gap-10 lg:w-3/4 lg:max-w-4xl lg:translate-y-0 ">
           <div className="grid grid-cols-2 gap-5 md:grid-cols-2 lg:grid-cols-4 text-center">
-            {/* CHECK-IN Field */}
+            {/* Check-In Field */}
             <div className="flex flex-col items-center">
               <h6 className="font-semibold mb-1">CHECK-IN</h6>
               <input
@@ -68,7 +71,7 @@ function BooksPage() {
               />
             </div>
 
-            {/* CHECK-OUT Field */}
+            {/* Check-Out Field */}
             <div className="flex flex-col items-center">
               <h6 className="font-semibold mb-1">CHECK-OUT</h6>
               <input
@@ -78,7 +81,7 @@ function BooksPage() {
               />
             </div>
 
-            {/* ROOMS Field */}
+            {/* Rooms Field */}
             <div className="flex flex-col items-center">
               <h6 className="font-semibold mb-1">ROOMS</h6>
               <div className="flex items-center gap-3">
@@ -103,7 +106,7 @@ function BooksPage() {
               </div>
             </div>
 
-            {/* BOOK Button */}
+            {/* Book Button */}
             <div className="flex flex-col items-center mt-1">
               <button
                 className="bg-blue-700 flex items-center text-white py-3 px-8 rounded-lg"
@@ -114,10 +117,10 @@ function BooksPage() {
                   borderRadius: "8px",
                 }}
               >
-                <FaIndianRupeeSign />{" "}
+                <FaIndianRupeeSign />
                 <span className="font-bold">{12430 * roomsCount}</span>
               </button>
-              <p className="">Click to pay token amount</p>
+              <p>Click to pay token amount</p>
             </div>
           </div>
         </div>

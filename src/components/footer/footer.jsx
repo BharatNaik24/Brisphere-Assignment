@@ -38,16 +38,43 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div>
-            <p className="mb-1">Terms and Conditions</p>
-            <p className="mb-1">Privacy Policy</p>
-            <p className="mb-1">Refunds</p>
+          <div className="flex flex-col">
+            <a
+              href=""
+              className="mb-1"
+              style={{
+                textDecoration: "none",
+                color: "#000",
+              }}
+            >
+              Terms and Conditions
+            </a>
+            <a
+              style={{
+                textDecoration: "none",
+                color: "#000",
+              }}
+              href=""
+              className="mb-1"
+            >
+              Privacy Policy
+            </a>
+            <a
+              style={{
+                textDecoration: "none",
+                color: "#000",
+              }}
+              href=""
+              className="mb-1"
+            >
+              Refunds
+            </a>
           </div>
         </div>
         <div className="mt-1 text-center">
           <p className="text-sm">© 2024 Brisphere. All Rights Reserved.</p>
           <p className="-m-5 p-0">
-            Developed by{" "}
+            Developed by
             <a
               href="https://www.instagram.com/nameisbharatnaik/"
               target="_blank"
